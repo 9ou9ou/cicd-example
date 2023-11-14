@@ -51,4 +51,4 @@ jobs:
   test-kube:
     runs-on: actions_runner_dev
     steps:
-       - run: echo "🎉 This job uses runner scale set runners!"
+       - run: kubectl get ns
