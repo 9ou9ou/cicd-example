@@ -52,6 +52,7 @@ jobs:
   deploy-to-kube:
     runs-on: actions_runner_dev
     steps:
+       - uses: actions/checkout@v3
        - uses: azure/setup-kubectl@v2.0
 
        - uses: Azure/k8s-set-context@v2
