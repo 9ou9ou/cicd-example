@@ -8,3 +8,5 @@ spec:
   template:
     spec:
       repository: 9ou9ou/cicd-example
+      labels: 
+         - actions_runner_dev
