@@ -48,7 +48,19 @@ jobs:
           tags: |
             oneclouddh/python-app:latest
             oneclouddh/python-app:${{ github.sha }}
-  test-kube:
+
+  deploy-to-kube:
     runs-on: actions_runner_dev
     steps:
-       - run: kubectl get ns
+       - uses: azure/setup-kubectl@v2.0
+
+       - uses: Azure/k8s-set-context@v2
+         with:
+              kubeconfig: ${{ secrets.KUBE_CONFIG }}
+       - uses: Azure/k8s-deploy@v4
+         with:
+              action: deploy
+              manifests: |
+                 manifests/deployment.yml
+                 manifests/service.yml
+
