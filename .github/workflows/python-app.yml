@@ -49,6 +49,6 @@ jobs:
             oneclouddh/python-app:latest
             oneclouddh/python-app:${{ github.sha }}
   test-kube:
-    runs-on: actions-runner-controller
+    runs-on: example-runnerdeploy
     steps:
        - run: echo "🎉 This job uses runner scale set runners!"
